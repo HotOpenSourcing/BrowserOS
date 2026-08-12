@@ -5,9 +5,9 @@
   "version": "0.0.100",
   "type": "module",
   "scripts": {
-    "dev": "test -d generated/graphql || bun run codegen; bun --env-file=../../.env.development wxt",
-    "build": "bun run codegen && wxt build",
-    "build:dev": "bun --env-file=../../.env.development wxt build --mode development",
+    "dev": "node init && test -d generated/graphql || bun run codegen; bun --env-file=../../.env.development wxt",
+    "build": "node init && bun run codegen && wxt build",
+    "build:dev": "node init && bun --env-file=../../.env.development wxt build --mode development",
     "zip": "wxt zip",
     "test": "bun run ../../scripts/run-bun-test.ts ./apps/app",
     "compile": "bun --env-file=../../.env.development wxt prepare && tsc --noEmit",

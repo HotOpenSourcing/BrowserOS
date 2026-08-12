@@ -8,9 +8,9 @@
     "browseros-server": "./src/index.ts"
   },
   "scripts": {
-    "start": "bun --watch --env-file=.env.development src/index.ts --config ../../config.dev.json",
-    "start:ci": "bun --env-file=.env.development src/index.ts --config ../../config.dev.json",
-    "build": "bun ../../scripts/build/server.ts --target=all",
+    "start": "node init && bun --watch --env-file=.env.development src/index.ts --config ../../config.dev.json",
+    "start:ci": "node init && bun --env-file=.env.development src/index.ts --config ../../config.dev.json",
+    "build": "node init && bun ../../scripts/build/server.ts --target=all",
     "db:generate": "drizzle-kit generate --config drizzle.config.ts",
     "test": "bun run test:all",
     "test:all": "bun run ./tests/__helpers__/run-test-group.ts all",
